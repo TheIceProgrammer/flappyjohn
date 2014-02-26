@@ -414,7 +414,7 @@ game.GameOverScreen = me.ScreenObject.extend({
         me.audio.play('lose'),
         this.savedData = {
             score: 507,
-            steps: 507
+            steps: 0
         },
         me.save.add(this.savedData),
         me.save.topSteps || me.save.add({
