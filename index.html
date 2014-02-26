@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Flappy John</title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Flappy John">
+    <meta name="keywords" content="Flappy, Bird, John, Hitler">
+    <meta name="author" content="fzzle">
+    <link rel="stylesheet" type="text/css" media="screen" href="Flappy%20John_files/stylesheet.css">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="screen"><canvas height="413" width="621"></canvas></div>
+    <script src="analytics.js" async=""></script><script src="melon.js"></script>
+    <script src="johnhitler.js"></script>
+    <script>
+      <!-- Google Analytics -->
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-48406468-1', 'fzzle.github.io');
+      ga('send', 'pageview');
+      <!-- Flappy John -->
+      window.onReady(function onReady() {
+        game.onload();
+        if (me.device.isMobile && !navigator.isCocoonJS) {
+          window.document.addEventListener("touchmove", function (e) {
+            e.preventDefault();
+            window.scroll(0, 0);
+            return false;
+          }, false);
+          (function () {
+            window.scrollTo(0, 1);
+            me.video.onresize(null);
+          }).defer();
+          me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+            window.scrollTo(0, 1);
+          });
+        }
+      });
+    </script>
+  
+
+</body></html>
